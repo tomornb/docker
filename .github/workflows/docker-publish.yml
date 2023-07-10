@@ -40,7 +40,7 @@ jobs:
           file: ./Dockerfile_Jenkins_2.176.1_Debian_Java_8u324
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: 2.176.1_Java_8u324
+          tags: tomornb/jenkins:2.176.1_Java_8u324
           labels: ${{ steps.meta.outputs.labels }}
                 
       - name: Build and push Docker image Jenkins_2.204.1_Debian_Java_8u324
@@ -50,6 +50,6 @@ jobs:
           file: ./Dockerfile_Jenkins_2.204.1_Debian_Java_8u324
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: 2.204.1_Java_8u324
+          tags: tomornb/jenkins:2.204.1_Java_8u324
           labels: ${{ steps.meta.outputs.labels }}
           
