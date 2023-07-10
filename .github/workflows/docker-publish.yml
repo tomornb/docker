@@ -39,7 +39,8 @@ jobs:
           context: .
           file: ./Dockerfile_Jenkins_2.176.1_Debian_Java_8u324
           push: true
-          tags: 2.176.1_${{ steps.meta.outputs.tags }}
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: 2.176.1_Java_8u324
           labels: ${{ steps.meta.outputs.labels }}
                 
       - name: Build and push Docker image Jenkins_2.204.1_Debian_Java_8u324
@@ -48,6 +49,7 @@ jobs:
           context: .
           file: ./Dockerfile_Jenkins_2.204.1_Debian_Java_8u324
           push: true
-          tags: 2.204.1_${{ steps.meta.outputs.tags }}
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: 2.204.1_Java_8u324
           labels: ${{ steps.meta.outputs.labels }}
           
