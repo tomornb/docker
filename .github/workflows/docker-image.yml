@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image Jenkins_2.176.1_Debian_Java_8u324
-      run: docker build . --file Dockerfile_Jenkins_2.176.1_Debian_Java_8u324 --tag tomornb/jenkins:2.176.1_$(date +%s)
+    - name: Build the Docker image Jenkins_2.176.1_Debian_Java
+      run: docker build . --file Dockerfile_Jenkins_2.176.1_Debian_Java --tag tomornb/jenkins:2.176.1_$(date +%s)
 
-    - name: Build the Docker image Jenkins_2.204.1_Debian_Java_8u324
-      run: docker build . --file Dockerfile_Jenkins_2.204.1_Debian_Java_8u324 --tag tomornb/jenkins:2.204.1_$(date +%s)
+    - name: Build the Docker image Jenkins_2.204.1_Debian_Java
+      run: docker build . --file Dockerfile_Jenkins_2.204.1_Debian_Java --tag tomornb/jenkins:2.204.1_$(date +%s)
       

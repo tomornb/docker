@@ -33,23 +33,23 @@ jobs:
         with:
           images: tomornb/jenkins
       
-      - name: Build and push Docker image Jenkins_2.176.1_Debian_Java_8u324
+      - name: Build and push Docker image Jenkins_2.176.1_Debian_Java
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: .
-          file: ./Dockerfile_Jenkins_2.176.1_Debian_Java_8u324
+          file: ./Dockerfile_Jenkins_2.176.1_Debian_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.176.1_Java_8u324
+          tags: tomornb/jenkins:2.176.1_Java_22-ea-bullseye
           labels: ${{ steps.meta.outputs.labels }}
                 
-      - name: Build and push Docker image Jenkins_2.204.1_Debian_Java_8u324
+      - name: Build and push Docker image Jenkins_2.204.1_Debian_Java
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: .
-          file: ./Dockerfile_Jenkins_2.204.1_Debian_Java_8u324
+          file: ./Dockerfile_Jenkins_2.204.1_Debian_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.204.1_Java_8u324
+          tags: tomornb/jenkins:2.204.1_Java_22-ea-bullseye
           labels: ${{ steps.meta.outputs.labels }}
           
