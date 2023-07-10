@@ -1,9 +1,6 @@
 FROM debian:stable-20230703-slim
 #FROM debian:stable-20230703
 
-ENV http_proxy "http://111.84.55.241:8080"
-ENV https_proxy "http://111.84.55.241:8080" 
-
 RUN echo "deb http://security.debian.org/debian-security bullseye-security main contrib non-free" > /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git curl gpg unzip libfreetype6 libfontconfig1 && rm -rf /var/lib/apt/lists/*
