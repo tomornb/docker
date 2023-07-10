@@ -1,7 +1,4 @@
-FROM debian:stable-20230703-slim
-#FROM debian:stable-20230703
-
-#RUN echo "deb http://security.debian.org/debian-security bullseye-security main contrib non-free" > /etc/apt/sources.list
+FROM openjdk:8u342-slim
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git curl gpg unzip libfreetype6 libfontconfig1 && rm -rf /var/lib/apt/lists/*
 
@@ -46,11 +43,11 @@ RUN curl -fsSL https://github.com/krallin/tini/releases/download/${TINI_VERSION}
 # jenkins version being bundled in this docker image
 ARG JENKINS_VERSION
 #ENV JENKINS_VERSION ${JENKINS_VERSION:-2.121.1}
-ENV JENKINS_VERSION ${JENKINS_VERSION:-2.176.1}
+ENV JENKINS_VERSION ${JENKINS_VERSION:-2.204.1}
 
 # jenkins.war checksum, download will be validated using it
 #ARG JENKINS_SHA=5bb075b81a3929ceada4e960049e37df5f15a1e3cfc9dc24d749858e70b48919
-ENV JENKINS_SHA 8bbc6e2043e7bd102f751aca94b51652e1e792ec0a11377d52c9d9ed484f0e8c
+ENV JENKINS_SHA 12b9ebbf9eb1cd1deab0d11512511bcd80a5d3a754dffab54dd6385d788d5284
 
 # Can be used to customize where jenkins.war get downloaded from
 ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
