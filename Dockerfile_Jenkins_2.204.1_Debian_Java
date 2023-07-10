@@ -1,4 +1,4 @@
-FROM openjdk:8u342-slim
+FROM openjdk:22-ea-bullseye
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y git curl gpg unzip libfreetype6 libfontconfig1 && rm -rf /var/lib/apt/lists/*
 
@@ -103,4 +103,6 @@ RUN useradd -m -r -u 51011 omropr && \
 RUN curl -fsSL "https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose
 
+ENV http_proxy "http://111.84.55.241:8080"
+ENV https_proxy "http://111.84.55.241:8080" 
 USER omropr 
