@@ -40,7 +40,7 @@ jobs:
           file: ./Dockerfile_Jenkins_2.176.1_Debian_No_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.176.1_No_Java
+          tags: tomornb/jenkins:2.176.1_omx_no_java
           labels: ${{ steps.meta.outputs.labels }}
                 
       - name: Build and push Docker image Jenkins_2.204.1_Debian_No_Java
@@ -50,7 +50,7 @@ jobs:
           file: ./Dockerfile_Jenkins_2.204.1_Debian_No_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.204.1_No_Java
+          tags: tomornb/jenkins:2.204.1_omx_no_java
           labels: ${{ steps.meta.outputs.labels }}          
       
       - name: Build and push Docker image Jenkins_2.176.1_Debian_Java
@@ -60,7 +60,7 @@ jobs:
           file: ./Dockerfile_Jenkins_2.176.1_Debian_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.176.1_Java_22-ea-bullseye
+          tags: tomornb/jenkins:2.176.1_omx_java
           labels: ${{ steps.meta.outputs.labels }}
                 
       - name: Build and push Docker image Jenkins_2.204.1_Debian_Java
@@ -70,6 +70,6 @@ jobs:
           file: ./Dockerfile_Jenkins_2.204.1_Debian_Java
           push: true
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: tomornb/jenkins:2.204.1_Java_22-ea-bullseye
+          tags: tomornb/jenkins:2.204.1_omx_java
           labels: ${{ steps.meta.outputs.labels }}
           
