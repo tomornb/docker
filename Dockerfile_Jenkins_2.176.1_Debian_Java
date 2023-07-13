@@ -94,9 +94,9 @@ RUN apt-get update -qq && \
     usermod -aG docker jenkins && \
     chown -R jenkins:jenkins $JENKINS_HOME/
 
-RUN mkdir -p /etc/docker/certs.d/omx
-COPY certificate_omx_in_docker/ca-certificates.crt /etc/docker/certs.d/omx
-RUN update-ca-certificates
+RUN mkdir -p /etc/docker/certs.d/rs-omx-git-201.dtacnetwork.dev:8443
+COPY certificate_omx_in_docker/ca-certificates.crt /etc/docker/certs.d/rs-omx-git-201.dtacnetwork.dev:8443
+#RUN update-ca-certificates
 
 RUN useradd -m -r -u 51011 omropr && \
     groupmod -g 495 docker && \
