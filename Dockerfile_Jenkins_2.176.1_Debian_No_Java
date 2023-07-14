@@ -89,10 +89,9 @@ USER root
 RUN apt-get update -qq && \
     apt-get install -qqy apt-transport-https ca-certificates gnupg2 software-properties-common && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor | tee /usr/share/keyrings/docker-ce-archive-keyring.gpg > /dev/null && \
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker-ce.list > /dev/null && \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce-archive-keyring.gpg] https://download.docker.com/linux/debian/ buster stable" | tee /etc/apt/sources.list.d/docker-ce.list > /dev/null && \
     apt-get update -qq && \
-    #apt-get install -qqy docker-ce containerd.io && \
-    apt-get install -qqy docker-ce && \
+    apt-get install -qqy docker-ce=18.06.3* && \
     usermod -aG docker jenkins && \
     chown -R jenkins:jenkins $JENKINS_HOME/
 	
